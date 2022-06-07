@@ -1,0 +1,2 @@
+# Eazy_Bank
+This is a project of a banking web App with proper security features, verifications and and helps in carrying out banking activities like like withdrawal , crediting and payment of bills etc.
