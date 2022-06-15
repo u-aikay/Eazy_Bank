@@ -24,8 +24,11 @@ public class Users {
     private String email;
     @Column(nullable = false)
     private String password;
-//    private Role role;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @Column(nullable = false)
-    private Collection<Roles> roles = new ArrayList<>();
+    @Column(length = 64)
+    private String verificationCode;
+    private boolean enabled;
+    private String Role;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @Column(nullable = false)
+//    private Collection<Roles> roles = new ArrayList<>();
 }
