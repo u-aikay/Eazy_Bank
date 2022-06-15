@@ -103,5 +103,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Eazy_Bank App</name>
+            <url>https://maven.pkg.github.com/u-aikay/Eazy_Bank</url>
+        </repository>
+    </distributionManagement>
 </project>
