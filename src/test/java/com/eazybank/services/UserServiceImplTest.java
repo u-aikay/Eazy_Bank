@@ -1,8 +1,9 @@
 package com.eazybank.services;
 
 import com.eazybank.dtos.UserDto;
-import com.eazybank.model.Users;
+import com.eazybank.model.User;
 import com.eazybank.repos.UserRepo;
+import com.eazybank.services.impl.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,13 +34,12 @@ class UserServiceImplTest {
     @InjectMocks
     private UserServiceImpl userService;
     @Mock
-    private Users user;
+    private User user;
     @Mock
     private UserDto userDto;
     @Mock
     private ModelMapper modelMapper;
 
-//    Authentication authentication = Mockito.mock(Authentication.class);
     SecurityContext securityContext = Mockito.mock(SecurityContext.class);
     Authentication auth = Mockito.mock(Authentication.class);
 
@@ -48,7 +48,7 @@ class UserServiceImplTest {
         when(securityContext.getAuthentication()).thenReturn(auth);
         SecurityContextHolder.setContext(securityContext);
 
-        user = Users.builder()
+        user = User.builder()
                 .userId(1L)
                 .fullName("Test Case")
                 .username("Test")

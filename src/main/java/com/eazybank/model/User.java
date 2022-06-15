@@ -1,10 +1,7 @@
 package com.eazybank.model;
 
 import lombok.*;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,10 +9,11 @@ import java.util.Collection;
 @Setter
 @Builder
 @Entity
-public class Users {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private Long userId;
     @Column(nullable = false)
     private String fullName;
     @Column(unique = true, nullable = false)
@@ -28,7 +26,4 @@ public class Users {
     private String verificationCode;
     private boolean enabled;
     private String Role;
-//    @ManyToMany(fetch = FetchType.EAGER)
-//    @Column(nullable = false)
-//    private Collection<Roles> roles = new ArrayList<>();
 }
