@@ -1,15 +1,15 @@
-package com.eazybank.services;
+package com.eazybank.services.impl;
 
 import com.eazybank.model.BlacklistToken;
 import com.eazybank.repos.BlacklistRepo;
+import com.eazybank.services.BlacklistService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 
-
 @Service
 @RequiredArgsConstructor
-public class BlacklistServiceImpl implements BlacklistService{
+public class BlacklistServiceImpl implements BlacklistService {
     private final BlacklistRepo blacklistRepo;
 
     @Override
